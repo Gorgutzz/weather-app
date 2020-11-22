@@ -13,8 +13,9 @@ const Forecast = () => {
      		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
      	}
      })
+     .then(response => response.json())
      .then(response => {
-     	console.log(response);
+         setResponseObj(response)
      })
      .catch(err => {
      	console.error(err);
