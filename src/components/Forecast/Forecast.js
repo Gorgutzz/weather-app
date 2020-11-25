@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Conditions from '../Conditions/Conditions';
 
 const Forecast = () => {
 
@@ -23,12 +23,12 @@ const Forecast = () => {
    }
    return (
      <div>
-        <h2>Find Current Weather Conditions</h2>
-        <div>
-            {JSON.stringify(responseObj)}
-        </div>
-        <button onClick={getForecast}>Get Forecast</button>
-    </div>
+         <h2>Find Current Weather Conditions</h2>
+         <button onClick={getForecast}>Get Forecast</button>
+         <Conditions
+             responseObj={responseObj}
+             />
+     </div>
    )
 }
 export default Forecast;
