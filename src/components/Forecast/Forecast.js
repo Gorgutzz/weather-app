@@ -8,9 +8,15 @@ const Forecast = () => {
    let [city, setCity] = useState('');
    let [unit, setUnit] = useState('imperial');
    let [responseObj, setResponseObj] = useState({});
+   let [error, setError] = useState(false);
+   let [loading, setLoading] = useState(false);
 
    function getForecast(e) {
        e.preventDefault();
+
+       if (city.length === 0) {
+           return setError(true);
+       }
 
        const uriEncodedCity = encodeURIComponent(city);
 
@@ -23,10 +29,17 @@ const Forecast = () => {
        })
        .then(response => response.json())
        .then(response => {
+         if (response.cod !== 200) {
+             throw new Error()
+         }
+
            setResponseObj(response)
+           setLoading(false);
        })
        .catch(err => {
-       	console.error(err);
+         setError(true);
+         setLoading(false);
+         console.log(err.message);
        });
      }
 
