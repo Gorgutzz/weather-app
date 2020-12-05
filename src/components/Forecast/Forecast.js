@@ -81,6 +81,8 @@ const Forecast = () => {
            <button onClick={getForecast}>Get Forecast</button>
            <Conditions
                responseObj={responseObj}
+               error={error}
+               loading={loading}
                />
        </div>
    )
