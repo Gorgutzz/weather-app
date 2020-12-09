@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./Logo.module.css"
+
 const Logo = () => (
     <div className={classes.sky}>
         <div className={classes.circle}/>
@@ -8,4 +9,5 @@ const Logo = () => (
         <div className={classes.cloud3} />
     </div>
 )
+
 export default Logo;
