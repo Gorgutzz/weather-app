@@ -14,7 +14,7 @@ function App() {
         <Forecast />
       </main>
       <footer>
-        Page created by yournamehere
+        Test
       </footer>
     </div>
   );
